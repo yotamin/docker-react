@@ -4,7 +4,7 @@ services:
 before_install:
     - docker build -t yotam/docker-react -f Dockerfile.dev .
 script:
-    - docker run -e CI=true yotam/docker-react npm run test
+    - docker run yotam/docker-react npm run test -- --coverage
 
 deploy:
     provider: elasticbeanstalk
